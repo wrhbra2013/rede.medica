@@ -7,17 +7,27 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav class="sidebar">
+  <div class="mobile-header">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <span class="mobile-title">Rede.Médica</span>
+    <button class="btn btn-sm btn-primary mobile-btn-novo" onclick="abrirModal()">+</button>
+  </div>
+
+  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
+
+  <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <h1>Rede.Médica</h1>
       <span class="subtitle">Agendamentos</span>
     </div>
     <ul class="nav-list">
-      <li><a href="#" class="nav-item active" data-page="dashboard"><span class="icon">📊</span> Dashboard</a></li>
-      <li><a href="#" class="nav-item" data-page="agendamentos"><span class="icon">📅</span> Agendamentos</a></li>
-      <li><a href="#" class="nav-item" data-page="medicos"><span class="icon">👨‍⚕️</span> Médicos</a></li>
-      <li><a href="#" class="nav-item" data-page="pacientes"><span class="icon">🧑‍🤝‍🧑</span> Pacientes</a></li>
-      <li><a href="#" class="nav-item" data-page="servicos"><span class="icon">⚕️</span> Serviços</a></li>
+      <li><a href="#" class="nav-item active" data-page="dashboard"><span class="icon">📊</span> <span>Dashboard</span></a></li>
+      <li><a href="#" class="nav-item" data-page="agendamentos"><span class="icon">📅</span> <span>Agendamentos</span></a></li>
+      <li><a href="#" class="nav-item" data-page="medicos"><span class="icon">👨‍⚕️</span> <span>Médicos</span></a></li>
+      <li><a href="#" class="nav-item" data-page="pacientes"><span class="icon">🧑‍🤝‍🧑</span> <span>Pacientes</span></a></li>
+      <li><a href="#" class="nav-item" data-page="servicos"><span class="icon">⚕️</span> <span>Serviços</span></a></li>
     </ul>
     <div class="sidebar-footer">
       <div class="api-status" id="apiStatus">

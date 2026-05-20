@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const page = el.dataset.page;
       navegar(page);
+      fecharSidebarMobile();
     });
   });
   API.checkStatus().then(online => {
@@ -331,4 +332,16 @@ function mostrarToast(msg, type = '') {
   t.classList.add('show');
   clearTimeout(t._timer);
   t._timer = setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.querySelector('.sidebar-backdrop').classList.toggle('open');
+}
+
+function fecharSidebarMobile() {
+  if (window.innerWidth < 768) {
+    document.getElementById('sidebar').classList.remove('open');
+    document.querySelector('.sidebar-backdrop').classList.remove('open');
+  }
 }
